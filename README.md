@@ -12,7 +12,7 @@ Feature
  - Query cscope database without autojumping to first result, quite convenient!
 
 
-Config Example
+Configuration Example
 --------------
 
 ```vim
@@ -22,10 +22,15 @@ if has("cscope")
   " Use tags for definition search first
   set cscopetagorder=1
 
+  " Refresh cscope database
   nnoremap ;r :call auto_cscope#RefreshCsdb()<CR>
+  " :cs find s <current word>
   nnoremap ;s :call auto_cscope#CscopeQueryQF("s")<CR>
+  " :cs find g <current word>
   nnoremap ;g :call auto_cscope#CscopeQueryQF("g")<CR>
+  " :cs find c <current word>
   nnoremap ;c :call auto_cscope#CscopeQueryQF("c")<CR>
+  " :cs find d <current word>
   nnoremap ;d :call auto_cscope#CscopeQueryQF("d")<CR>
 endif
 ```
